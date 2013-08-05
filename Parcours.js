@@ -10,10 +10,10 @@
         var hasModule = (typeof module !== 'undefined' && module.exports); // true is we are in nodeJS env
 
         if (hasModule) { 
-            module.exports = factory;
+	    module.exports = factory();
         }
         else { // browser env
-            root.Parcours = factory;
+	    root.Parcours = factory();
         }
 
    }
@@ -38,11 +38,11 @@
             else {
                 if (isBrowsable(object[items[index]])) {
                     for(var i in object[items[index]]) {
-                        iterator(i, object[items[index]][i]);
+			iterator(object[items[index]][i]);
                     }
                 }
                 else {
-                    iterator(0, object[items[index]]);   
+		    iterator(object[items[index]]);
                 }
             }
         }
@@ -55,13 +55,20 @@
         }
     }
 
-    return {
-        forEach : function(object,item, iterator) {
-            var items = item.split('.');
+   var Parcours = {};
 
-            find(object, items, 0, iterator);
+   Parcours.forEach = function(object, item, iterator) {
+	var items = item.split('.');
+
+	if (items.length == 0) {
+	    return object;
         }
-    }
+
+	find(object, items, 0, iterator);
+   }
+
+
+   return Parcours;
 
 
 });
