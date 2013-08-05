@@ -1,47 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Parcours.js by flocks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <header>
-      <div class="container">
+    <div class="wrapper">
+      <header>
         <h1>Parcours.js</h1>
-        <h2>Tiny lib for browsing javascript objects/array.</h2>
+        <p>Tiny lib for browsing javascript objects/array.</p>
 
-        <section id="downloads">
-          <a href="https://github.com/flocks/Parcours.js/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/flocks/Parcours.js/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/flocks/Parcours.js" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <p class="view"><a href="https://github.com/flocks/Parcours.js">View the Project on GitHub <small>flocks/Parcours.js</small></a></p>
 
-    <div class="container">
-      <section id="main_content">
+
+        <ul>
+          <li><a href="https://github.com/flocks/Parcours.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/flocks/Parcours.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/flocks/Parcours.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="parcoursjs--browse-smoothly-your-js-obects" class="anchor" href="#parcoursjs--browse-smoothly-your-js-obects"><span class="octicon octicon-link"></span></a>Parcours.js : browse smoothly your JS obects.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Parcours.is is a tiny lib I wrote to browse your JS obecjts with a nicer and less verbose syntax.<br>
+Let assume we have this object</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">buddies</span> <span class="o">=</span><span class="p">{</span>
+    <span class="s2">"geeks"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"programmers "</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"McLaughlin"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Brett"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"brett@email.com"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Hunter"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jason"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jason@servlets.com"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Harold"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Elliot"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"elharo@macfaq.com"</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"gamers"</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Play1"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Brett"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"brett@email.com"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Play23"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Paul"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"paull@servlets.com"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Play33"</span><span class="p">,</span>
+                <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Pierre"</span><span class="p">,</span>
+                <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"pierre@macfaq.com"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">"authors"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"nom"</span><span class="o">:</span> <span class="s2">"Asimov"</span><span class="p">,</span>
+            <span class="s2">"prenom"</span><span class="o">:</span> <span class="s2">"Isaac"</span><span class="p">,</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"science fiction"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Williams"</span><span class="p">,</span>
+            <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Tad"</span><span class="p">,</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"horreur"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Peretti"</span><span class="p">,</span>
+            <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Frank"</span><span class="p">,</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"policier"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"musicians"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Clapton"</span><span class="p">,</span>
+            <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Eric"</span><span class="p">,</span>
+            <span class="s2">"instrument"</span><span class="o">:</span> <span class="s2">"guitare"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rachmaninoff"</span><span class="p">,</span>
+            <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Laurent"</span><span class="p">,</span>
+            <span class="s2">"instrument"</span><span class="o">:</span> <span class="s2">"piano"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Let's say you want to list all the buddies's name. Since of the buddies object structure, you would have to write something pretty ugly like this :</p>
+
+<div class="highlight"><pre>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">typeOfGeek</span> <span class="k">in</span> <span class="nx">buddies</span><span class="p">[</span><span class="s1">'geeks'</span><span class="p">])</span> <span class="p">{</span>
+   <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">geek</span> <span class="k">in</span> <span class="nx">buddies</span><span class="p">[</span><span class="s1">'geeks'</span><span class="p">][</span><span class="nx">typeOfGeek</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">buddies</span><span class="p">[</span><span class="s1">'geeks'</span><span class="p">][</span><span class="nx">typeOfGeek</span><span class="p">][</span><span class="nx">geek</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">author</span> <span class="k">in</span> <span class="nx">buddies</span><span class="p">[</span><span class="s1">'authors'</span><span class="p">])</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">buddies</span><span class="p">[</span><span class="s1">'authors'</span><span class="p">][</span><span class="nx">author</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">musician</span> <span class="k">in</span> <span class="nx">buddies</span><span class="p">[</span><span class="s1">'musicians'</span><span class="p">])</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">buddies</span><span class="p">[</span><span class="s1">'musicians'</span><span class="p">][</span><span class="nx">musician</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>With Parcours.js</p>
+
+<div class="highlight"><pre><span class="nx">Parcours</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">buddies</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
 
 <p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
@@ -60,8 +150,12 @@ $ git checkout gh-pages
 
 <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/flocks">flocks</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
