@@ -1,64 +1,145 @@
-Parcours.js
-===========
+### Parcours.js : browse smoothly your JS obects.
+Parcours.is is a tiny lib I wrote to browse your JS objects with a nicer and less verbose syntax. It's available both in **nodeJS** and **browser** environment. Also **AMD** compatible.
 
-Tiny lib for browsing javascript objects/array.
-
-Let's say you have the following object : 
+Let assume we have this object
 
 ````javascript
-var personnes =
-  { 
-  "geeks" : {
-          "programmeurs": [
-              { "nom": "McLaughlin", "prenom": "Brett", "email": "brett@email.com" },
-              { "nom": "Hunter", "prenom": "Jason", "email": "jason@servlets.com" },
-              { "nom": "Harold", "prenom": "Elliot", "email": "elharo@macfaq.com" }
-   ],
-         "gamers" : [
-              { "nom": "Play1", "prenom": "Brett", "email": "brett@email.com" },
-              { "nom": "Play23", "prenom": "Paul", "email": "paull@servlets.com" },
-              { "nom": "Play33", "prenom": "Pierre", "email": "pierre@macfaq.com" }     
-          ]
-  },
-    
-  "auteurs": [
-      { "nom": "Asimov", "prenom": "Isaac", "genre": "science fiction" },
-      { "nom": "Williams", "prenom": "Tad", "genre": "horreur" },
-      { "nom": "Peretti", "prenom": "Frank", "genre": "policier" }
+var buddies ={
+    "geeks": {
+        "programmers ": [
+            {
+                "name": "McLaughlin",
+                "firstname": "Brett",
+                "email": "brett@email.com"
+            },
+            {
+                "name": "Hunter",
+                "firstname": "Jason",
+                "email": "jason@servlets.com"
+            },
+            {
+                "name": "Harold",
+                "firstname": "Elliot",
+                "email": "elharo@macfaq.com"
+            }
+        ],
+        "gamers": [
+            {
+                "name": "Play1",
+                "firstname": "Brett",
+                "email": "brett@email.com"
+            },
+            {
+                "name": "Play23",
+                "firstname": "Paul",
+                "email": "paull@servlets.com"
+            },
+            {
+                "name": "Play33",
+                "firstname": "Pierre",
+                "email": "pierre@macfaq.com"
+            }
+        ]
+    },
+    "authors": [
+        {
+            "name": "Asimov",
+            "firstname": "Isaac",
+            "genre": "Sci-fi"
+        },
+        {
+            "name": "Williams",
+            "firstname": "Tad",
+            "genre": "Comedy"
+        },
+        {
+            "name": "Peretti",
+            "firstname": "Frank",
+            "genre": "Thriller"
+        }
     ],
-  "musiciens": [
-      { "nom": "Clapton", "prenom": "Eric", "instrument": "guitare" },
-      { "nom": "Rachmaninoff", "prenom": "Laurent", "instrument": "piano" }
-   ]
-  };
+    "musicians": [
+        {
+            "name": "Clapton",
+            "firstname": "Eric",
+            "instrument": "guitar"
+        },
+        {
+            "name": "Rachmaninoff",
+            "firstname": "Laurent",
+            "instrument": "piano"
+        }
+    ]
+}
 ````
-You might want to list the geeks's emails, you would basically have to write something like : 
-````javacsript
-  for(var kindOfGeek in personnes['geeks']) {
-    for(var person in personnes['geeks'][kindOfGeek]) {
-      console.log(personnes['geeks'][kindOfGeek][person]['name']);
-    }
-  }
+
+Let's say you want to list all the buddies's name. Since of the buddies object structure, you would have to write something pretty **ugly** like this :
+````javascript
+
+for(var typeOfGeek in buddies['geeks']) {
+   for(var geek in buddies['geeks'][typeOfGeek]) {
+      console.log(buddies['geeks'][typeOfGeek][geek]['name']);
+   }
+}
+
+for(var author in buddies['authors']) {
+   console.log(buddies['authors'][author]['name']);
+}
+
+for(var musician in buddies['musicians']) {
+   console.log(buddies['musicians'][musician]['name']);
+}
 ````
-With Parcours.JS you just write 
-````javascript 
-Parcours.forEach(personnes, "geeks.name", function(val) {
+
+With Parcours.js
+````javascript
+Parcours.forEach(buddies, 'name', function(val) {
   console.log(val);
 });
 ````
 
-<h2>Usage</h2>
-````javascript
-  Parcours.forEach(object, fields, iterator);
-````
-- Object is the Javascript object or Array, you want to find the fields in.
-- fields is a string representing the query
-- iterator is the function callback called every time your query is matched in the object
+Now you want to get only the geeks's name.
 
-You can put whatever you want in fields, like "auteurs", or "auteurs.genre".
-For example if you want to list the name of every person in persons, you do 
 ````javascript
-Parcours.forEach(personnes, "nom", function(val) {
-  console.log(val);
+Parcours.forEach(buddies, 'geeks.name', function(val) {
+   console.log(val);
 });
+`````
+
+Or may be you want all the gamers 
+
+````javascript
+Parcours.forEach(buddies, 'gamers', function(gamer) {
+   console.log(gamer);
+});
+`````
+
+### Installation
+#### In NodeJS
+```
+npm install parcours.js
+```
+````javascript
+var Parcours = require('parcours.js');
 ````
+
+#### In the browser
+````javascript
+<script src="moment.js"></script>
+````
+
+#### AMD loading
+````javascript
+`````
+
+### Usage
+Parcours.forEach(object, "query", iterator);
+
+- object is the JS object or array
+- query is a string.
+- callback being called for each occurs
+
+### Authors and Contributors
+ I'm currently the only contributor of the project, but feel free to fork the projects and send me pull requests !
+
+teissierflorent@gmail.com
