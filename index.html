@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>Parcours.js</h1>
-        <p>Tiny lib for browsing javascript objects/array.</p>
+        <p>Browse your js object smoothly</p>
 
         <p class="view"><a href="https://github.com/flocks/Parcours.js">View the Project on GitHub <small>flocks/Parcours.js</small></a></p>
 
@@ -31,7 +31,7 @@
         <h3>
 <a name="parcoursjs--browse-smoothly-your-js-obects" class="anchor" href="#parcoursjs--browse-smoothly-your-js-obects"><span class="octicon octicon-link"></span></a>Parcours.js : browse smoothly your JS obects.</h3>
 
-<p>Parcours.is is a tiny lib I wrote to browse your JS obecjts with a nicer and less verbose syntax. It's available both in nodeJS and browser environement. Also AMD compatible.</p>
+<p>Parcours.is is a tiny lib I wrote to browse your JS objects with a nicer and less verbose syntax. It's available both in <strong>nodeJS</strong> and <strong>browser</strong> environment. Also <strong>AMD</strong> compatible.</p>
 
 <p>Let assume we have this object</p>
 
@@ -74,26 +74,26 @@
     <span class="p">},</span>
     <span class="s2">"authors"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">"nom"</span><span class="o">:</span> <span class="s2">"Asimov"</span><span class="p">,</span>
-            <span class="s2">"prenom"</span><span class="o">:</span> <span class="s2">"Isaac"</span><span class="p">,</span>
-            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"science fiction"</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Asimov"</span><span class="p">,</span>
+            <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Isaac"</span><span class="p">,</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"Sci-fi"</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Williams"</span><span class="p">,</span>
             <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Tad"</span><span class="p">,</span>
-            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"horreur"</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"Comedy"</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Peretti"</span><span class="p">,</span>
             <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Frank"</span><span class="p">,</span>
-            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"policier"</span>
+            <span class="s2">"genre"</span><span class="o">:</span> <span class="s2">"Thriller"</span>
         <span class="p">}</span>
     <span class="p">],</span>
     <span class="s2">"musicians"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Clapton"</span><span class="p">,</span>
             <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Eric"</span><span class="p">,</span>
-            <span class="s2">"instrument"</span><span class="o">:</span> <span class="s2">"guitare"</span>
+            <span class="s2">"instrument"</span><span class="o">:</span> <span class="s2">"guitar"</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rachmaninoff"</span><span class="p">,</span>
@@ -104,7 +104,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>Let's say you want to list all the buddies's name. Since of the buddies object structure, you would have to write something pretty ugly like this :</p>
+<p>Let's say you want to list all the buddies's name. Since of the buddies object structure, you would have to write something pretty <strong>ugly</strong> like this :</p>
 
 <div class="highlight"><pre>
 <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">typeOfGeek</span> <span class="k">in</span> <span class="nx">buddies</span><span class="p">[</span><span class="s1">'geeks'</span><span class="p">])</span> <span class="p">{</span>
@@ -129,7 +129,19 @@
 <span class="p">});</span>
 </pre></div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Now you want to get only the geeks's name.</p>
+
+<div class="highlight"><pre><span class="nx">Parcours</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">buddies</span><span class="p">,</span> <span class="s1">'geeks.name'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Or may be you want all the gamers </p>
+
+<div class="highlight"><pre><span class="nx">Parcours</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">buddies</span><span class="p">,</span> <span class="s1">'gamers'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">gamer</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gamer</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
 
 <h3>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h3>
@@ -156,16 +168,18 @@
 <h3>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>Parcours.forEach(object, "query");</p>
+<p>Parcours.forEach(object, "query", iterator);</p>
 
 <ul>
 <li>object is the JS object or array</li>
 <li>query is a string.</li>
+<li>callback being called for each occurs</li>
 </ul><h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>I'm currently the only contributor of the project, but feel free to fork the projects and send me pull requests !</p>
+
+<p><a href="mailto:teissierflorent@gmail.com">teissierflorent@gmail.com</a></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/flocks">flocks</a></p>
