@@ -117,7 +117,7 @@ Parcours.forEach(buddies, 'gamers', function(gamer) {
 ### Installation
 #### In NodeJS
 ```
-npm install parcours.js
+npm install parcoursjs
 ```
 ````javascript
 var Parcours = require('parcours.js');
@@ -125,7 +125,7 @@ var Parcours = require('parcours.js');
 
 #### In the browser
 ````javascript
-<script src="moment.js"></script>
+<script src="Parcours.js"></script>
 ````
 
 #### AMD loading
