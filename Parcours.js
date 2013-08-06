@@ -1,5 +1,4 @@
-
-(function(root, factory) {
+(function(root, factory, undefined) {
 
     // if AMD loaded
    if(typeof define == 'function' && define.amd) {
